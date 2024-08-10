@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="index/img/icon.png" rel="shortcut icon" type="image/x-icon" />
     <title>北京妙木山</title>
-    <meta name="keywords" content="日历，农历，黄历，星座，排班，备忘录，房贷，商业贷款，信用贷款，公积金贷款，组合贷，提前还款的计算器" />
-    <meta name="description" content="日历、农历、黄历、星座，年度循环备忘录，每周排班，工作日排班，分享日程；房贷、商业贷款、信用贷款、公积金贷款、组合贷、提前还款的计算器。两款好用的微信小程序工具" />
+    <meta name="keywords" content="阴历，阳历，日历，农历，黄历，星座，排班，备忘录，日记，房贷，商业贷款，信用贷款，公积金贷款，组合贷，提前还款的计算器，AI星座，AI占星师，以科技为基础的占星术，查看运势，男女配对！" />
+    <meta name="description" content="阴历，阳历，日历，农历，黄历，星座，排班，备忘录，日记，房贷，商业贷款，信用贷款，公积金贷款，组合贷，提前还款的计算器，AI星座，AI占星师，以科技为基础的占星术，查看运势，男女配对！" />
     <script>
         (function (doc, win) {
             var docEl = doc.documentElement,
@@ -44,60 +44,113 @@
             font-size: .14rem;
             margin: 0;
             padding: 0;
+            -webkit-font-smoothing: antialiased;
+            font-family: ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
         }
         #app{
             text-align: center;
             padding-top: .5rem;
             width: 70%;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .top{
+            opacity: 0;
+            transition: all ease .8s;
+            transform: translateY(20px);
+        }
+        .flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .logo{
             display: block;
-            width: 2rem;
+            width: 1.2rem;
             margin: 0 auto 0;
         }
         .title{
             font-size: .5rem;
-            margin-top: .2rem;
-            margin-bottom: 1rem;
+            flex: 1;
+            text-align: left;
+            padding-left: .3rem;
         }
         footer{
             width: 100%;
-            position: absolute;
             bottom: .1rem;
             text-align: center;
+            padding: 30px 0;
         }
         .wx-mp{
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
         }
-        .wx-mp>div{
-            width: 40%;
-            margin: 20px auto 0;
+        .wx-mp .mp-item{
+            width: 100%;
+            margin: .3rem auto 0;
             text-align: left;
-            font-size: .24rem;
+            font-size: .18rem;
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: .2rem;
+            padding: .1rem;
+            opacity: 0;
+            transition: all ease .6s;
+            transform: translateY(20px);
+        }
+        .top.show,
+        .wx-mp .mp-item.show{
+            opacity: 1;
+            transform: translateY(0);
         }
         .wx-mp .logo{
             margin-bottom: .1rem;
+            margin-right: .2rem;
         }
+        .wx-mp .mp-desc{
+            flex: 1;
+        }
+        .mp-title{
+            font-size: .24rem;
+            font-weight: bolder;
+            margin-bottom: .06rem;
+        }
+
     </style>
 </head>
 
 <body>
 <div id="app">
-    <div>
+    <div class="top flex">
         <img class="logo" src="index/img/icon.png">
         <div class="title">北京妙木山</div>
     </div>
     <div class="wx-mp" >
-        <div>
+        <div class="mp-item flex mp-item-1">
             <img class="logo" src="index/img/rili.jpeg">
-            日历、农历、黄历、星座，年度循环备忘录，每周排班，工作日排班，分享日程
+            <div class="mp-desc">
+                <div class="mp-title">日记小记</div>
+                阳历阴历老黄历，排班待办备忘录，日历星座查运势
+            </div>
         </div>
-        <div>
+        <div class="mp-item flex mp-item-2">
+            <img class="logo" src="index/img/star.jpeg">
+            <div class="mp-desc">
+                <div class="mp-title">AI星座占星师</div>
+                AI星座，AI占星师，以科技为基础的占星术，查看运势，男女配对
+            </div>
+        </div>
+        <div class="mp-item flex mp-item-3">
             <img class="logo" src="index/img/calculator.jpeg">
-            房贷、商业贷款、信用贷款、公积金贷款、组合贷、提前还款的计算器
+            <div class="mp-desc">
+                <div class="mp-title">提前还款月供计算器 妙木山</div>
+                房贷、商业贷款、信用贷款、公积金贷款、组合贷、提前还款的计算器
+            </div>
         </div>
+
     </div>
 
 
@@ -107,6 +160,17 @@
 <footer>
     京公网安备 <a href="https://beian.miit.gov.cn" target="_blank">京ICP备2021019584号</a> ©2021 miaomushan.top
 </footer>
+<script>
+    window.onload = function(){
+        document.getElementsByClassName('top')[0].className += ' show'; 
+        var itemList = document.getElementsByClassName('mp-item');
+        for(let i=0; i<itemList.length; i++){
+            setTimeout(()=>{
+                itemList[i].className += ' show'; 
+            },(i+1)*400)
+        }
+    }
+</script>
 </body>
 
 </html>
