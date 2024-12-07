@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="index/img/icon.png" rel="shortcut icon" type="image/x-icon" />
     <title>北京妙木山</title>
-    <meta name="keywords" content="阴历，阳历，日历，农历，黄历，星座，排班，备忘录，日记，房贷，商业贷款，信用贷款，公积金贷款，组合贷，提前还款的计算器，AI星座，AI占星师，以科技为基础的占星术，查看运势，男女配对！" />
-    <meta name="description" content="阴历，阳历，日历，农历，黄历，星座，排班，备忘录，日记，房贷，商业贷款，信用贷款，公积金贷款，组合贷，提前还款的计算器，AI星座，AI占星师，以科技为基础的占星术，查看运势，男女配对！" />
+    <meta name="keywords" content="阴历，阳历，日历，农历，黄历，星座，排班，备忘录，日记，房贷，商业贷款，信用贷款，公积金贷款，组合贷，提前还款的计算器，AI星座，AI占星师，以科技为基础的占星术，查看运势，男女配对，五路财神，拜一拜，有事没事拜一拜！" />
+    <meta name="description" content="阴历，阳历，日历，农历，黄历，星座，排班，备忘录，日记，房贷，商业贷款，信用贷款，公积金贷款，组合贷，提前还款的计算器，AI星座，AI占星师，以科技为基础的占星术，查看运势，男女配对，五路财神，拜一拜，有事没事拜一拜！" />
     <script>
         (function (doc, win) {
             var docEl = doc.documentElement,
@@ -51,7 +51,7 @@
         }
         #app{
             text-align: center;
-            padding-top: .5rem;
+            padding-top: .2rem;
             width: 70%;
             margin: 0 auto;
             display: flex;
@@ -69,11 +69,11 @@
         }
         .logo{
             display: block;
-            width: 1.2rem;
+            width: 1rem;
             margin: 0 auto 0;
         }
         .title{
-            font-size: .5rem;
+            font-size: .4rem;
             flex: 1;
             text-align: left;
             padding-left: .3rem;
@@ -91,12 +91,12 @@
         }
         .wx-mp .mp-item{
             width: 100%;
-            margin: .3rem auto 0;
+            margin: .2rem auto 0;
             text-align: left;
             font-size: .18rem;
             border: 1px solid rgba(0,0,0,.2);
             border-radius: .2rem;
-            padding: .1rem;
+            padding: .07rem;
             opacity: 0;
             transition: all ease .6s;
             transform: translateY(20px);
@@ -143,6 +143,13 @@
                 AI星座，AI占星师，以科技为基础的占星术，查看运势，男女配对
             </div>
         </div>
+        <div class="mp-item flex mp-item-4">
+            <img class="logo" src="https://img.meituan.net/chatpicture/6cf3f614724f774d0748be8c1c5a11689552.jpg">
+            <div class="mp-desc">
+                <div class="mp-title">拜五路财神</div>
+                五路财神齐上阵，祝你万事顺利，早日升职加薪！
+            </div>
+        </div>
         <div class="mp-item flex mp-item-3">
             <img class="logo" src="index/img/calculator.jpeg">
             <div class="mp-desc">
@@ -162,11 +169,11 @@
 </footer>
 <script>
     window.onload = function(){
-        document.getElementsByClassName('top')[0].className += ' show'; 
+        document.getElementsByClassName('top')[0].className += ' show';
         var itemList = document.getElementsByClassName('mp-item');
         for(let i=0; i<itemList.length; i++){
             setTimeout(()=>{
-                itemList[i].className += ' show'; 
+                itemList[i].className += ' show';
             },(i+1)*400)
         }
     }
